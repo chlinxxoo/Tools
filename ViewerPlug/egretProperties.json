@@ -1,0 +1,36 @@
+{
+  "engineVersion": "5.2.33-fla",
+  "compilerVersion": "5.2.33-fla",
+  "template": {},
+  "target": {
+    "current": "web"
+  },
+  "modules": [
+    {
+      "name": "egret"
+    },
+    {
+      "name": "assetsmanager"
+    },
+    {
+      "name": "dragonBones"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "promise"
+    },
+    {
+      "name": "viewer_main",
+      "path": "./third_party/viewer_main"
+    },
+    {
+      "name": "qrcode",
+      "path": "./third_party/qrcode"
+    }
+  ]
+}
