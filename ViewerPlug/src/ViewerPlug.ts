@@ -36,9 +36,29 @@ class ViewerPlug extends egret.DisplayObjectContainer {
     private _armature: dragonBones.Armature
     private _ead: dragonBones.EgretArmatureDisplay
 
+    private BTN_CONFIG = [
+        {
+            clazz: eui.Button,
+            text: '打印骨骼',
+            func: () => {
+                this._ead.armature.getBones().forEach((bone => {
+                    this.log(bone.name)
+                }))
+            }
+        },
+        {
+            clazz: eui.Label,
+            text: '龙骨',
+            func: undefined
+        }
+    ]
+
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
+        if (DEBUG) {
+            ((<any>window)._vp) = this;
+        }
     }
 
     private async init() {
@@ -73,7 +93,7 @@ class ViewerPlug extends egret.DisplayObjectContainer {
                 this.log("rfind 成功")
                 this.gp_root && (this.gp_root.visible = true)
             }
-        }, this, 1000);
+        }, this, 500);
     }
 
     public async inject() {
@@ -127,46 +147,25 @@ class ViewerPlug extends egret.DisplayObjectContainer {
             this.addChild(this.gp_root)
             this.gp_root.visible = false
 
-            let BtnConfig = [
-                {
-                    clazz: eui.Button,
-                    text: 'debugDraw',
-                    func: () => {
-                        this._ead.debugDraw = !this._ead.debugDraw
-                    }
-                },
-                {
-                    clazz: eui.Button,
-                    text: '打印骨骼',
-                    func: () => {
-                        this._ead.armature.getBones().forEach((bone => {
-
-                        }))
-                    }
-                },
-                {
-                    clazz: eui.Label,
-                    text: '龙骨',
-                    func: undefined
-                }
-            ]
-
-            for (let c of BtnConfig) {
-                let clazz: eui.Button | eui.Label
-                if (c.clazz == eui.Button) {
-                    clazz = new c.clazz() as eui.Button
-                    clazz.label = c.text
-                    if (c.func) {
-                        clazz.addEventListener(egret.TouchEvent.TOUCH_TAP, c.func, clazz)
-                    }
-                } else if (c.clazz == eui.Label) {
-                    clazz = new c.clazz() as eui.Label
-                    clazz.text = c.text
-                }
-
-                this.gp_root.addChild(clazz)
+            for (let c of this.BTN_CONFIG) {
+                this.gp_root.addChild(this.genCompoment(c))
             }
         }
+    }
+
+    private genCompoment(c: any): egret.DisplayObject {
+        let clazz: eui.Button | eui.Label
+        if (c.clazz == eui.Button) {
+            clazz = new c.clazz() as eui.Button
+            clazz.label = c.text
+            if (c.func) {
+                clazz.addEventListener(egret.TouchEvent.TOUCH_TAP, c.func, clazz)
+            }
+        } else if (c.clazz == eui.Label) {
+            clazz = new c.clazz() as eui.Label
+            clazz.text = c.text
+        }
+        return clazz
     }
 
     private log(message?: any, ...optionalParams: any[]) {
