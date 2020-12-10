@@ -213,6 +213,11 @@
 						return (window.devicePixelRatio || 1) / backingStore;
 					}
 				});
+
+				var rootClass = egret.getDefinitionByName("ViewerPlug");
+				var instance = new rootClass();
+				global.egret_stages[0].addChild(instance)
+				instance.inject()
 			});
 		});
 		xhr.send(null);
