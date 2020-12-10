@@ -29,21 +29,64 @@
 
 class ViewerPlug extends egret.DisplayObjectContainer {
     private gp_root: eui.Group
-    public static dbInstance: dragonBones.EgretArmatureDisplay
+
+    private _armatureList: HTMLSelectElement
+
+    private _armatureName: string
+    private _armature: dragonBones.Armature
+    private _ead: dragonBones.EgretArmatureDisplay
 
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
 
-    public async inject() {
-        this.log("注入")
+    private async init() {
         let assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
         await RES.loadConfig("resource/default.res.json", "resource/");
         await this.loadTheme()
-        this.initDebugPanel()
+    }
+
+    private rFindEad(root: egret.DisplayObjectContainer): dragonBones.EgretArmatureDisplay {
+        if (root.numChildren) {
+            for (let i = 0; i < root.numChildren; i++) {
+                let obj = root.getChildAt(i)
+                if (obj instanceof dragonBones.EgretArmatureDisplay) {
+                    if ((obj as dragonBones.EgretArmatureDisplay).armature.name == this._armatureName) {
+                        return obj
+                    }
+                } else if (obj instanceof egret.DisplayObjectContainer) {
+                    return this.rFindEad(obj)
+                }
+            }
+        }
+    }
+
+    private onChanged(armtureName: string) {
+        this._armatureName = armtureName
+
+        egret.setTimeout(() => {
+            this._ead = this.rFindEad(this.stage)
+            if (this._ead) {
+                this.log("rfind 成功")
+                this.gp_root && (this.gp_root.visible = true)
+            }
+        }, this, 1000);
+    }
+
+    public async inject() {
+        this.log("注入")
+        await this.init()
+        this._armatureList = document.getElementById("armatureList") as HTMLSelectElement
+        this._armatureList && (this._armatureList.onchange = (t: any) => {
+            this.gp_root && (this.gp_root.visible = false)
+            this.onChanged(t.target.value)
+        })
+        this.onChanged((this._armatureList.item(this._armatureList.selectedIndex) as Element).textContent)
+
+        this.updateDebugPanel()
     }
 
     private onAddToStage(event: egret.Event) {
@@ -76,54 +119,57 @@ class ViewerPlug extends egret.DisplayObjectContainer {
         })
     }
 
-    private initDebugPanel() {
-        this.gp_root = new eui.Group()
-        let layout = new eui.VerticalLayout()
-        this.gp_root.layout = layout
-        this.addChild(this.gp_root)
+    private updateDebugPanel() {
+        if (!this.gp_root) {
+            this.gp_root = new eui.Group()
+            let layout = new eui.VerticalLayout()
+            this.gp_root.layout = layout
+            this.addChild(this.gp_root)
+            this.gp_root.visible = false
 
-        let BtnConfig = [
-            {
-                clazz: eui.Button,
-                text: 'debugDraw',
-                func: () => {
-                    ViewerPlug.dbInstance.debugDraw = !ViewerPlug.dbInstance.debugDraw
-                }
-            },
-            {
-                clazz: eui.Button,
-                text: '打印骨骼',
-                func: () => {
-                    ViewerPlug.dbInstance.armature.getBones().forEach((bone => {
+            let BtnConfig = [
+                {
+                    clazz: eui.Button,
+                    text: 'debugDraw',
+                    func: () => {
+                        this._ead.debugDraw = !this._ead.debugDraw
+                    }
+                },
+                {
+                    clazz: eui.Button,
+                    text: '打印骨骼',
+                    func: () => {
+                        this._ead.armature.getBones().forEach((bone => {
 
-                    }))
+                        }))
+                    }
+                },
+                {
+                    clazz: eui.Label,
+                    text: '龙骨',
+                    func: undefined
                 }
-            },
-            {
-                clazz: eui.Label,
-                text: '龙骨',
-                func: undefined
+            ]
+
+            for (let c of BtnConfig) {
+                let clazz: eui.Button | eui.Label
+                if (c.clazz == eui.Button) {
+                    clazz = new c.clazz() as eui.Button
+                    clazz.label = c.text
+                    if (c.func) {
+                        clazz.addEventListener(egret.TouchEvent.TOUCH_TAP, c.func, clazz)
+                    }
+                } else if (c.clazz == eui.Label) {
+                    clazz = new c.clazz() as eui.Label
+                    clazz.text = c.text
+                }
+
+                this.gp_root.addChild(clazz)
             }
-        ]
-
-        for (let c of BtnConfig) {
-            let clazz: eui.Button | eui.Label
-            if (c.clazz == eui.Button) {
-                clazz = new c.clazz() as eui.Button
-                clazz.label = c.text
-                if (c.func) {
-                    clazz.addEventListener(egret.TouchEvent.TOUCH_TAP, c.func, clazz)
-                }
-            } else if (c.clazz == eui.Label) {
-                clazz = new c.clazz() as eui.Label
-                clazz.text = c.text
-            }
-
-            this.gp_root.addChild(clazz)
         }
     }
 
     private log(message?: any, ...optionalParams: any[]) {
-        egret.log("【ViewerPlug】" + message, optionalParams)
+        egret.log("【ViewerPlug】" + message, ...optionalParams)
     }
 }
