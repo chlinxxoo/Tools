@@ -16,9 +16,6 @@
       "name": "assetsmanager"
     },
     {
-      "name": "dragonBones"
-    },
-    {
       "name": "game"
     },
     {
@@ -28,12 +25,16 @@
       "name": "promise"
     },
     {
+      "name": "dragonBones",
+      "path": "../third_party/dragonBones"
+    },
+    {
       "name": "viewer_main",
-      "path": "./third_party/viewer_main"
+      "path": "../third_party/viewer_main"
     },
     {
       "name": "qrcode",
-      "path": "./third_party/qrcode"
+      "path": "../third_party/qrcode"
     }
   ]
 }

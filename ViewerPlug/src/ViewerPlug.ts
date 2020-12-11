@@ -27,7 +27,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class ViewerPlug extends egret.DisplayObjectContainer {
+class ViewerPlug extends eui.Group {
     private gp_root: eui.Group
 
     private _armatureList: HTMLSelectElement
@@ -140,10 +140,14 @@ class ViewerPlug extends egret.DisplayObjectContainer {
     }
 
     private updateDebugPanel() {
+        this.width = 400
+        this.height = egret.MainContext.instance.stage.stageHeight
         if (!this.gp_root) {
             this.gp_root = new eui.Group()
             let layout = new eui.VerticalLayout()
             this.gp_root.layout = layout
+            this.gp_root.bottom = 0
+            this.gp_root.left = 0
             this.addChild(this.gp_root)
             this.gp_root.visible = false
 

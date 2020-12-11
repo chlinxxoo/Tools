@@ -844,7 +844,7 @@ var player;
                                     c ? this.factory.parseTextureAtlasData(u, c) : this.factory.parseTextureAtlasData(u, null)
                                 }
                             else
-                                this.factory.updateTextureAtlasData(r.name, i.textureAtlases)
+                                this.factory.updateTextureAtlases(i.textureAtlases, r.name)
                     }
                     this.sendNotification(t.NotificationType.VOChange, null)
                 }
