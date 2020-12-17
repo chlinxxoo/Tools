@@ -79,3 +79,4 @@ function stopHelper() {
     clearInterval(internalID);
     window.close();
 }
+//# sourceMappingURL=helper.js.map

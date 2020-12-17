@@ -381,3 +381,4 @@ exports.helpTransformA = new Transform();
 exports.helpTransformB = new Transform();
 exports.helpPointA = new Point();
 exports.helpPointB = new Point();
+//# sourceMappingURL=geom.js.map

@@ -89,11 +89,11 @@ var Display = /** @class */ (function () {
     return Display;
 }());
 exports.Display = Display;
-var ImageDisplay = /** @class */ (function (_super_1) {
-    __extends(ImageDisplay, _super_1);
+var ImageDisplay = /** @class */ (function (_super) {
+    __extends(ImageDisplay, _super);
     function ImageDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         if (!isDefault) {
             _this.type = dbft.DisplayType[dbft.DisplayType.Image].toLowerCase();
         }
@@ -102,11 +102,11 @@ var ImageDisplay = /** @class */ (function (_super_1) {
     return ImageDisplay;
 }(Display));
 exports.ImageDisplay = ImageDisplay;
-var ArmatureDisplay = /** @class */ (function (_super_1) {
-    __extends(ArmatureDisplay, _super_1);
+var ArmatureDisplay = /** @class */ (function (_super) {
+    __extends(ArmatureDisplay, _super);
     function ArmatureDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         if (!isDefault) {
             _this.type = dbft.DisplayType[dbft.DisplayType.Armature].toLowerCase();
         }
@@ -140,10 +140,10 @@ var Animation = /** @class */ (function () {
     return Animation;
 }());
 exports.Animation = Animation;
-var AllTimeline = /** @class */ (function (_super_1) {
-    __extends(AllTimeline, _super_1);
+var AllTimeline = /** @class */ (function (_super) {
+    __extends(AllTimeline, _super);
     function AllTimeline() {
-        return _super_1 !== null && _super_1.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return AllTimeline;
 }(Timeline));
@@ -155,10 +155,10 @@ var Frame = /** @class */ (function () {
     return Frame;
 }());
 exports.Frame = Frame;
-var TweenFrame = /** @class */ (function (_super_1) {
-    __extends(TweenFrame, _super_1);
+var TweenFrame = /** @class */ (function (_super) {
+    __extends(TweenFrame, _super);
     function TweenFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.tweenEasing = null;
         _this.curve = [];
         return _this;
@@ -166,10 +166,10 @@ var TweenFrame = /** @class */ (function (_super_1) {
     return TweenFrame;
 }(Frame));
 exports.TweenFrame = TweenFrame;
-var AnimationFrame = /** @class */ (function (_super_1) {
-    __extends(AnimationFrame, _super_1);
+var AnimationFrame = /** @class */ (function (_super) {
+    __extends(AnimationFrame, _super);
     function AnimationFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.action = "";
         _this.event = "";
         _this.sound = "";
@@ -178,10 +178,10 @@ var AnimationFrame = /** @class */ (function (_super_1) {
     return AnimationFrame;
 }(Frame));
 exports.AnimationFrame = AnimationFrame;
-var AllFrame = /** @class */ (function (_super_1) {
-    __extends(AllFrame, _super_1);
+var AllFrame = /** @class */ (function (_super) {
+    __extends(AllFrame, _super);
     function AllFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.hide = false;
         _this.tweenRotate = 0;
         _this.displayIndex = 0;
@@ -250,3 +250,4 @@ exports.copyConfig = [
         SubTexture: dbft.Texture
     }
 ];
+//# sourceMappingURL=dragonBonesFormatV23.js.map

@@ -898,3 +898,4 @@ function getMinAndMax(values) {
     }
     return [min, max];
 }
+//# sourceMappingURL=fromLive2D.js.map

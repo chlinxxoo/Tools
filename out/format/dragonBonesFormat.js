@@ -538,10 +538,10 @@ var BaseData = /** @class */ (function () {
     return BaseData;
 }());
 exports.BaseData = BaseData;
-var DragonBones = /** @class */ (function (_super_1) {
-    __extends(DragonBones, _super_1);
+var DragonBones = /** @class */ (function (_super) {
+    __extends(DragonBones, _super);
     function DragonBones() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.frameRate = 0;
         _this.name = "";
         _this.stage = "";
@@ -557,10 +557,10 @@ var DragonBones = /** @class */ (function (_super_1) {
     return DragonBones;
 }(BaseData));
 exports.DragonBones = DragonBones;
-var UserData = /** @class */ (function (_super_1) {
-    __extends(UserData, _super_1);
+var UserData = /** @class */ (function (_super) {
+    __extends(UserData, _super);
     function UserData() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.ints = [];
         _this.floats = [];
         _this.strings = [];
@@ -569,20 +569,20 @@ var UserData = /** @class */ (function (_super_1) {
     return UserData;
 }(BaseData));
 exports.UserData = UserData;
-var OldAction = /** @class */ (function (_super_1) {
-    __extends(OldAction, _super_1);
+var OldAction = /** @class */ (function (_super) {
+    __extends(OldAction, _super);
     function OldAction() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.gotoAndPlay = "";
         return _this;
     }
     return OldAction;
 }(BaseData));
 exports.OldAction = OldAction;
-var Action = /** @class */ (function (_super_1) {
-    __extends(Action, _super_1);
+var Action = /** @class */ (function (_super) {
+    __extends(Action, _super);
     function Action() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = ActionType.Play;
         _this.name = "";
         _this.bone = "";
@@ -592,10 +592,10 @@ var Action = /** @class */ (function (_super_1) {
     return Action;
 }(UserData));
 exports.Action = Action;
-var Canvas = /** @class */ (function (_super_1) {
-    __extends(Canvas, _super_1);
+var Canvas = /** @class */ (function (_super) {
+    __extends(Canvas, _super);
     function Canvas() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.hasBackground = false;
         _this.color = -1;
         _this.x = 0;
@@ -607,10 +607,10 @@ var Canvas = /** @class */ (function (_super_1) {
     return Canvas;
 }(BaseData));
 exports.Canvas = Canvas;
-var Armature = /** @class */ (function (_super_1) {
-    __extends(Armature, _super_1);
+var Armature = /** @class */ (function (_super) {
+    __extends(Armature, _super);
     function Armature() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = ArmatureType[ArmatureType.Armature].toLowerCase();
         _this.frameRate = 0;
         _this.name = "";
@@ -770,10 +770,10 @@ var Armature = /** @class */ (function (_super_1) {
     return Armature;
 }(BaseData));
 exports.Armature = Armature;
-var Bone = /** @class */ (function (_super_1) {
-    __extends(Bone, _super_1);
+var Bone = /** @class */ (function (_super) {
+    __extends(Bone, _super);
     function Bone() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = BoneType[BoneType.Bone].toLowerCase();
         _this.inheritTranslation = true;
         _this.inheritRotation = true;
@@ -791,11 +791,11 @@ var Bone = /** @class */ (function (_super_1) {
     return Bone;
 }(BaseData));
 exports.Bone = Bone;
-var Surface = /** @class */ (function (_super_1) {
-    __extends(Surface, _super_1);
+var Surface = /** @class */ (function (_super) {
+    __extends(Surface, _super);
     function Surface(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.type = BoneType[BoneType.Surface].toLowerCase();
         _this.offset = -1; // Binary.
         _this.segmentX = 0;
@@ -821,10 +821,10 @@ var Surface = /** @class */ (function (_super_1) {
     return Surface;
 }(Bone));
 exports.Surface = Surface;
-var Slot = /** @class */ (function (_super_1) {
-    __extends(Slot, _super_1);
+var Slot = /** @class */ (function (_super) {
+    __extends(Slot, _super);
     function Slot() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.blendMode = BlendMode[BlendMode.Normal].toLowerCase();
         _this.displayIndex = 0;
         _this.zIndex = 0;
@@ -841,10 +841,10 @@ var Slot = /** @class */ (function (_super_1) {
     return Slot;
 }(BaseData));
 exports.Slot = Slot;
-var IKConstraint = /** @class */ (function (_super_1) {
-    __extends(IKConstraint, _super_1);
+var IKConstraint = /** @class */ (function (_super) {
+    __extends(IKConstraint, _super);
     function IKConstraint() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.bendPositive = true;
         _this.chain = 0;
         _this.weight = 1.00;
@@ -856,10 +856,10 @@ var IKConstraint = /** @class */ (function (_super_1) {
     return IKConstraint;
 }(BaseData));
 exports.IKConstraint = IKConstraint;
-var PathConstraint = /** @class */ (function (_super_1) {
-    __extends(PathConstraint, _super_1);
+var PathConstraint = /** @class */ (function (_super) {
+    __extends(PathConstraint, _super);
     function PathConstraint() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = "";
         _this.target = "";
         _this.bones = [];
@@ -876,10 +876,10 @@ var PathConstraint = /** @class */ (function (_super_1) {
     return PathConstraint;
 }(BaseData));
 exports.PathConstraint = PathConstraint;
-var Skin = /** @class */ (function (_super_1) {
-    __extends(Skin, _super_1);
+var Skin = /** @class */ (function (_super) {
+    __extends(Skin, _super);
     function Skin() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = "default";
         _this.slot = [];
         _this.userData = null;
@@ -897,10 +897,10 @@ var Skin = /** @class */ (function (_super_1) {
     return Skin;
 }(BaseData));
 exports.Skin = Skin;
-var SkinSlot = /** @class */ (function (_super_1) {
-    __extends(SkinSlot, _super_1);
+var SkinSlot = /** @class */ (function (_super) {
+    __extends(SkinSlot, _super);
     function SkinSlot() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = "";
         _this.display = [];
         _this.actions = []; // Deprecated.
@@ -918,10 +918,10 @@ var SkinSlot = /** @class */ (function (_super_1) {
     return SkinSlot;
 }(BaseData));
 exports.SkinSlot = SkinSlot;
-var Display = /** @class */ (function (_super_1) {
-    __extends(Display, _super_1);
+var Display = /** @class */ (function (_super) {
+    __extends(Display, _super);
     function Display() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = DisplayType[DisplayType.Image].toLowerCase();
         _this.name = "";
         _this.transform = new geom_1.Transform();
@@ -930,10 +930,10 @@ var Display = /** @class */ (function (_super_1) {
     return Display;
 }(BaseData));
 exports.Display = Display;
-var BoundingBoxDisplay = /** @class */ (function (_super_1) {
-    __extends(BoundingBoxDisplay, _super_1);
+var BoundingBoxDisplay = /** @class */ (function (_super) {
+    __extends(BoundingBoxDisplay, _super);
     function BoundingBoxDisplay() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.subType = BoundingBoxType[BoundingBoxType.Rectangle].toLowerCase();
         _this.color = 0x000000;
         return _this;
@@ -941,11 +941,11 @@ var BoundingBoxDisplay = /** @class */ (function (_super_1) {
     return BoundingBoxDisplay;
 }(Display));
 exports.BoundingBoxDisplay = BoundingBoxDisplay;
-var ImageDisplay = /** @class */ (function (_super_1) {
-    __extends(ImageDisplay, _super_1);
+var ImageDisplay = /** @class */ (function (_super) {
+    __extends(ImageDisplay, _super);
     function ImageDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.path = "";
         _this.pivot = new geom_1.Point(0.5, 0.5);
         if (!isDefault) {
@@ -956,11 +956,11 @@ var ImageDisplay = /** @class */ (function (_super_1) {
     return ImageDisplay;
 }(Display));
 exports.ImageDisplay = ImageDisplay;
-var ArmatureDisplay = /** @class */ (function (_super_1) {
-    __extends(ArmatureDisplay, _super_1);
+var ArmatureDisplay = /** @class */ (function (_super) {
+    __extends(ArmatureDisplay, _super);
     function ArmatureDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.inheritAnimation = true;
         _this.path = "";
         _this.actions = [];
@@ -972,11 +972,11 @@ var ArmatureDisplay = /** @class */ (function (_super_1) {
     return ArmatureDisplay;
 }(Display));
 exports.ArmatureDisplay = ArmatureDisplay;
-var MeshDisplay = /** @class */ (function (_super_1) {
-    __extends(MeshDisplay, _super_1);
+var MeshDisplay = /** @class */ (function (_super) {
+    __extends(MeshDisplay, _super);
     function MeshDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.offset = -1; // Binary.
         _this.width = 0;
         _this.height = 0;
@@ -1023,11 +1023,11 @@ var MeshDisplay = /** @class */ (function (_super_1) {
     return MeshDisplay;
 }(Display));
 exports.MeshDisplay = MeshDisplay;
-var SharedMeshDisplay = /** @class */ (function (_super_1) {
-    __extends(SharedMeshDisplay, _super_1);
+var SharedMeshDisplay = /** @class */ (function (_super) {
+    __extends(SharedMeshDisplay, _super);
     function SharedMeshDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.inheritDeform = true;
         _this.path = "";
         _this.share = "";
@@ -1040,11 +1040,11 @@ var SharedMeshDisplay = /** @class */ (function (_super_1) {
     return SharedMeshDisplay;
 }(Display));
 exports.SharedMeshDisplay = SharedMeshDisplay;
-var PathDisplay = /** @class */ (function (_super_1) {
-    __extends(PathDisplay, _super_1);
+var PathDisplay = /** @class */ (function (_super) {
+    __extends(PathDisplay, _super);
     function PathDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.offset = -1; // Binary.
         _this.closed = false;
         _this.constantSpeed = false;
@@ -1067,11 +1067,11 @@ var PathDisplay = /** @class */ (function (_super_1) {
     return PathDisplay;
 }(Display));
 exports.PathDisplay = PathDisplay;
-var RectangleBoundingBoxDisplay = /** @class */ (function (_super_1) {
-    __extends(RectangleBoundingBoxDisplay, _super_1);
+var RectangleBoundingBoxDisplay = /** @class */ (function (_super) {
+    __extends(RectangleBoundingBoxDisplay, _super);
     function RectangleBoundingBoxDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.width = 0.00;
         _this.height = 0.00;
         if (!isDefault) {
@@ -1083,11 +1083,11 @@ var RectangleBoundingBoxDisplay = /** @class */ (function (_super_1) {
     return RectangleBoundingBoxDisplay;
 }(BoundingBoxDisplay));
 exports.RectangleBoundingBoxDisplay = RectangleBoundingBoxDisplay;
-var EllipseBoundingBoxDisplay = /** @class */ (function (_super_1) {
-    __extends(EllipseBoundingBoxDisplay, _super_1);
+var EllipseBoundingBoxDisplay = /** @class */ (function (_super) {
+    __extends(EllipseBoundingBoxDisplay, _super);
     function EllipseBoundingBoxDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.width = 0.00;
         _this.height = 0.00;
         if (!isDefault) {
@@ -1099,11 +1099,11 @@ var EllipseBoundingBoxDisplay = /** @class */ (function (_super_1) {
     return EllipseBoundingBoxDisplay;
 }(BoundingBoxDisplay));
 exports.EllipseBoundingBoxDisplay = EllipseBoundingBoxDisplay;
-var PolygonBoundingBoxDisplay = /** @class */ (function (_super_1) {
-    __extends(PolygonBoundingBoxDisplay, _super_1);
+var PolygonBoundingBoxDisplay = /** @class */ (function (_super) {
+    __extends(PolygonBoundingBoxDisplay, _super);
     function PolygonBoundingBoxDisplay(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.offset = -1; // Binary.
         _this.vertexCount = 0;
         _this.vertices = [];
@@ -1124,10 +1124,10 @@ var PolygonBoundingBoxDisplay = /** @class */ (function (_super_1) {
     return PolygonBoundingBoxDisplay;
 }(BoundingBoxDisplay));
 exports.PolygonBoundingBoxDisplay = PolygonBoundingBoxDisplay;
-var Animation = /** @class */ (function (_super_1) {
-    __extends(Animation, _super_1);
+var Animation = /** @class */ (function (_super) {
+    __extends(Animation, _super);
     function Animation() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = AnimationType.Normal;
         _this.blendType = AnimationBlendType.None;
         _this.duration = 1;
@@ -1176,10 +1176,10 @@ var Animation = /** @class */ (function (_super_1) {
     return Animation;
 }(BaseData));
 exports.Animation = Animation;
-var AnimationBinary = /** @class */ (function (_super_1) {
-    __extends(AnimationBinary, _super_1);
+var AnimationBinary = /** @class */ (function (_super) {
+    __extends(AnimationBinary, _super);
     function AnimationBinary() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = AnimationType.Normal;
         _this.blendType = AnimationBlendType.None;
         _this.duration = 0;
@@ -1200,10 +1200,10 @@ var AnimationBinary = /** @class */ (function (_super_1) {
     return AnimationBinary;
 }(BaseData));
 exports.AnimationBinary = AnimationBinary;
-var Timeline = /** @class */ (function (_super_1) {
-    __extends(Timeline, _super_1);
+var Timeline = /** @class */ (function (_super) {
+    __extends(Timeline, _super);
     function Timeline() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.scale = 1.0;
         _this.offset = 0.0;
         _this.name = "";
@@ -1212,10 +1212,10 @@ var Timeline = /** @class */ (function (_super_1) {
     return Timeline;
 }(BaseData));
 exports.Timeline = Timeline;
-var TypeTimeline = /** @class */ (function (_super_1) {
-    __extends(TypeTimeline, _super_1);
+var TypeTimeline = /** @class */ (function (_super) {
+    __extends(TypeTimeline, _super);
     function TypeTimeline() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.type = TimelineType.Action;
         _this.frame = [];
         return _this;
@@ -1230,10 +1230,10 @@ exports.TypeTimeline = TypeTimeline;
 /**
  * @deprecated
  */
-var BoneTimeline = /** @class */ (function (_super_1) {
-    __extends(BoneTimeline, _super_1);
+var BoneTimeline = /** @class */ (function (_super) {
+    __extends(BoneTimeline, _super);
     function BoneTimeline() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.frame = []; // Deprecated.
         _this.translateFrame = [];
         _this.rotateFrame = [];
@@ -1402,10 +1402,10 @@ exports.BoneTimeline = BoneTimeline;
 /**
  * @deprecated
  */
-var SlotTimeline = /** @class */ (function (_super_1) {
-    __extends(SlotTimeline, _super_1);
+var SlotTimeline = /** @class */ (function (_super) {
+    __extends(SlotTimeline, _super);
     function SlotTimeline() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.frame = []; // Deprecated.
         _this.displayFrame = [];
         _this.colorFrame = [];
@@ -1518,10 +1518,10 @@ exports.SlotTimeline = SlotTimeline;
 /**
  * @deprecated
  */
-var ZOrderTimeline = /** @class */ (function (_super_1) {
-    __extends(ZOrderTimeline, _super_1);
+var ZOrderTimeline = /** @class */ (function (_super) {
+    __extends(ZOrderTimeline, _super);
     function ZOrderTimeline() {
-        return _super_1 !== null && _super_1.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return ZOrderTimeline;
 }(TypeTimeline));
@@ -1529,10 +1529,10 @@ exports.ZOrderTimeline = ZOrderTimeline;
 /**
  * @deprecated
  */
-var IKConstraintTimeline = /** @class */ (function (_super_1) {
-    __extends(IKConstraintTimeline, _super_1);
+var IKConstraintTimeline = /** @class */ (function (_super) {
+    __extends(IKConstraintTimeline, _super);
     function IKConstraintTimeline() {
-        return _super_1 !== null && _super_1.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return IKConstraintTimeline;
 }(TypeTimeline));
@@ -1540,10 +1540,10 @@ exports.IKConstraintTimeline = IKConstraintTimeline;
 /**
  * @deprecated
  */
-var SlotDeformTimeline = /** @class */ (function (_super_1) {
-    __extends(SlotDeformTimeline, _super_1);
+var SlotDeformTimeline = /** @class */ (function (_super) {
+    __extends(SlotDeformTimeline, _super);
     function SlotDeformTimeline() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.skin = "default"; // Deprecated.
         _this.slot = ""; // Deprecated.
         return _this;
@@ -1551,10 +1551,10 @@ var SlotDeformTimeline = /** @class */ (function (_super_1) {
     return SlotDeformTimeline;
 }(TypeTimeline));
 exports.SlotDeformTimeline = SlotDeformTimeline;
-var AnimationTimeline = /** @class */ (function (_super_1) {
-    __extends(AnimationTimeline, _super_1);
+var AnimationTimeline = /** @class */ (function (_super) {
+    __extends(AnimationTimeline, _super);
     function AnimationTimeline() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.x = 0.0;
         _this.y = 0.0;
         return _this;
@@ -1562,10 +1562,10 @@ var AnimationTimeline = /** @class */ (function (_super_1) {
     return AnimationTimeline;
 }(TypeTimeline));
 exports.AnimationTimeline = AnimationTimeline;
-var Frame = /** @class */ (function (_super_1) {
-    __extends(Frame, _super_1);
+var Frame = /** @class */ (function (_super) {
+    __extends(Frame, _super);
     function Frame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.duration = 1;
         _this._position = -1;
         return _this;
@@ -1573,10 +1573,10 @@ var Frame = /** @class */ (function (_super_1) {
     return Frame;
 }(BaseData));
 exports.Frame = Frame;
-var TweenFrame = /** @class */ (function (_super_1) {
-    __extends(TweenFrame, _super_1);
+var TweenFrame = /** @class */ (function (_super) {
+    __extends(TweenFrame, _super);
     function TweenFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.tweenEasing = NaN;
         _this.curve = [];
         return _this;
@@ -1613,10 +1613,10 @@ var TweenFrame = /** @class */ (function (_super_1) {
     return TweenFrame;
 }(Frame));
 exports.TweenFrame = TweenFrame;
-var SingleValueFrame0 = /** @class */ (function (_super_1) {
-    __extends(SingleValueFrame0, _super_1);
+var SingleValueFrame0 = /** @class */ (function (_super) {
+    __extends(SingleValueFrame0, _super);
     function SingleValueFrame0() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.value = 0.0;
         return _this;
     }
@@ -1629,10 +1629,10 @@ var SingleValueFrame0 = /** @class */ (function (_super_1) {
     return SingleValueFrame0;
 }(TweenFrame));
 exports.SingleValueFrame0 = SingleValueFrame0;
-var SingleValueFrame1 = /** @class */ (function (_super_1) {
-    __extends(SingleValueFrame1, _super_1);
+var SingleValueFrame1 = /** @class */ (function (_super) {
+    __extends(SingleValueFrame1, _super);
     function SingleValueFrame1() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.value = 1.0;
         return _this;
     }
@@ -1645,10 +1645,10 @@ var SingleValueFrame1 = /** @class */ (function (_super_1) {
     return SingleValueFrame1;
 }(TweenFrame));
 exports.SingleValueFrame1 = SingleValueFrame1;
-var DoubleValueFrame0 = /** @class */ (function (_super_1) {
-    __extends(DoubleValueFrame0, _super_1);
+var DoubleValueFrame0 = /** @class */ (function (_super) {
+    __extends(DoubleValueFrame0, _super);
     function DoubleValueFrame0() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.x = 0.0;
         _this.y = 0.0;
         return _this;
@@ -1663,10 +1663,10 @@ var DoubleValueFrame0 = /** @class */ (function (_super_1) {
     return DoubleValueFrame0;
 }(TweenFrame));
 exports.DoubleValueFrame0 = DoubleValueFrame0;
-var DoubleValueFrame1 = /** @class */ (function (_super_1) {
-    __extends(DoubleValueFrame1, _super_1);
+var DoubleValueFrame1 = /** @class */ (function (_super) {
+    __extends(DoubleValueFrame1, _super);
     function DoubleValueFrame1() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.x = 1.0;
         _this.y = 1.0;
         return _this;
@@ -1681,10 +1681,10 @@ var DoubleValueFrame1 = /** @class */ (function (_super_1) {
     return DoubleValueFrame1;
 }(TweenFrame));
 exports.DoubleValueFrame1 = DoubleValueFrame1;
-var MutilpleValueFrame = /** @class */ (function (_super_1) {
-    __extends(MutilpleValueFrame, _super_1);
+var MutilpleValueFrame = /** @class */ (function (_super) {
+    __extends(MutilpleValueFrame, _super);
     function MutilpleValueFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.offset = 0;
         _this.value = [];
         _this.vertices = []; // Deprecated.
@@ -1748,10 +1748,10 @@ exports.MutilpleValueFrame = MutilpleValueFrame;
 /**
  * @deprecated
  */
-var ActionFrame = /** @class */ (function (_super_1) {
-    __extends(ActionFrame, _super_1);
+var ActionFrame = /** @class */ (function (_super) {
+    __extends(ActionFrame, _super);
     function ActionFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.action = ""; // Deprecated.
         _this.event = ""; // Deprecated.
         _this.sound = ""; // Deprecated.
@@ -1770,10 +1770,10 @@ exports.ActionFrame = ActionFrame;
 /**
  * @deprecated
  */
-var BoneAllFrame = /** @class */ (function (_super_1) {
-    __extends(BoneAllFrame, _super_1);
+var BoneAllFrame = /** @class */ (function (_super) {
+    __extends(BoneAllFrame, _super);
     function BoneAllFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.tweenRotate = 0;
         _this.action = "";
         _this.event = "";
@@ -1793,10 +1793,10 @@ exports.BoneAllFrame = BoneAllFrame;
 /**
  * @deprecated
  */
-var BoneRotateFrame = /** @class */ (function (_super_1) {
-    __extends(BoneRotateFrame, _super_1);
+var BoneRotateFrame = /** @class */ (function (_super) {
+    __extends(BoneRotateFrame, _super);
     function BoneRotateFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.clockwise = 0;
         _this.rotate = 0.0;
         _this.skew = 0.0;
@@ -1837,10 +1837,10 @@ exports.BoneRotateFrame = BoneRotateFrame;
 /**
  * @deprecated
  */
-var SlotAllFrame = /** @class */ (function (_super_1) {
-    __extends(SlotAllFrame, _super_1);
+var SlotAllFrame = /** @class */ (function (_super) {
+    __extends(SlotAllFrame, _super);
     function SlotAllFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.displayIndex = 0;
         _this.color = new geom_1.ColorTransform();
         _this.actions = [];
@@ -1859,10 +1859,10 @@ exports.SlotAllFrame = SlotAllFrame;
 /**
  * @deprecated
  */
-var SlotDisplayFrame = /** @class */ (function (_super_1) {
-    __extends(SlotDisplayFrame, _super_1);
+var SlotDisplayFrame = /** @class */ (function (_super) {
+    __extends(SlotDisplayFrame, _super);
     function SlotDisplayFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.value = 0;
         _this.actions = [];
         return _this;
@@ -1876,10 +1876,10 @@ var SlotDisplayFrame = /** @class */ (function (_super_1) {
     return SlotDisplayFrame;
 }(Frame));
 exports.SlotDisplayFrame = SlotDisplayFrame;
-var SlotColorFrame = /** @class */ (function (_super_1) {
-    __extends(SlotColorFrame, _super_1);
+var SlotColorFrame = /** @class */ (function (_super) {
+    __extends(SlotColorFrame, _super);
     function SlotColorFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.value = new geom_1.ColorTransform();
         return _this;
     }
@@ -1895,10 +1895,10 @@ exports.SlotColorFrame = SlotColorFrame;
 /**
  * @deprecated
  */
-var IKConstraintFrame = /** @class */ (function (_super_1) {
-    __extends(IKConstraintFrame, _super_1);
+var IKConstraintFrame = /** @class */ (function (_super) {
+    __extends(IKConstraintFrame, _super);
     function IKConstraintFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.bendPositive = true;
         _this.weight = 1.0;
         return _this;
@@ -1913,10 +1913,10 @@ var IKConstraintFrame = /** @class */ (function (_super_1) {
     return IKConstraintFrame;
 }(TweenFrame));
 exports.IKConstraintFrame = IKConstraintFrame;
-var TextureAtlas = /** @class */ (function (_super_1) {
-    __extends(TextureAtlas, _super_1);
+var TextureAtlas = /** @class */ (function (_super) {
+    __extends(TextureAtlas, _super);
     function TextureAtlas() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.width = 0;
         _this.height = 0;
         _this.scale = 1.00;
@@ -1937,10 +1937,10 @@ var TextureAtlas = /** @class */ (function (_super_1) {
     return TextureAtlas;
 }(BaseData));
 exports.TextureAtlas = TextureAtlas;
-var Texture = /** @class */ (function (_super_1) {
-    __extends(Texture, _super_1);
+var Texture = /** @class */ (function (_super) {
+    __extends(Texture, _super);
     function Texture() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.rotated = false;
         _this.x = 0;
         _this.y = 0;
@@ -2021,10 +2021,29 @@ exports.copyConfig = [
         animation: Animation,
         defaultActions: OldAction,
         canvas: Canvas,
-        userData: UserData
+        userData: UserData,
+        aabb: [
+            function (key, object, scale) {
+                return object / scale;
+            },
+            Function
+        ]
     },
-    Bone, {
-        userData: UserData
+    Bone,
+    {
+        userData: UserData,
+        transform: [
+            function (key, object, scale) {
+                return (["x", "y"]).indexOf(key.toString()) == -1 ? object : object / scale;
+            },
+            Function
+        ],
+        length: [
+            function (key, object, scale) {
+                return object / scale;
+            },
+            Function
+        ]
     },
     Slot, {
         actions: OldAction,
@@ -2210,3 +2229,4 @@ exports.compressConfig = [
     new TextureAtlas(),
     new Texture(),
 ];
+//# sourceMappingURL=dragonBonesFormat.js.map

@@ -189,3 +189,4 @@ function default_1(data, forRuntime) {
     return data;
 }
 exports.default = default_1;
+//# sourceMappingURL=toNew.js.map

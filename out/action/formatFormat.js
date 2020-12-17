@@ -627,3 +627,4 @@ function cleanFrameB(frames) {
 function equalB(a, b, c) {
     return Math.abs((b.value - a.value) / a.duration - (c.value - b.value) / b.duration) < 0.01;
 }
+//# sourceMappingURL=formatFormat.js.map

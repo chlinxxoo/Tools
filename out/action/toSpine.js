@@ -484,3 +484,4 @@ function setCurveFormDB(spFrame, dbFrame, isLastFrame) {
         spFrame.curve = "linear";
     }
 }
+//# sourceMappingURL=toSpine.js.map

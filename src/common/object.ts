@@ -1,4 +1,4 @@
-﻿export function copyObjectFrom(from: any, to: any, config: any[] | null): void {
+﻿export function copyObjectFrom(from: any, to: any, config: any[] | null, scale: number = 1.0): void {
     let dataConfig: any = null;
     if (config !== null) {
         const index = config.indexOf(to.constructor);
@@ -12,11 +12,11 @@
             continue;
         }
 
-        _copyObjectFrom(to, k, to[k], from[k], dataConfig ? dataConfig[k] : null, config);
+        _copyObjectFrom(to, k, to[k], from[k], dataConfig ? dataConfig[k] : null, config, scale);
     }
 }
 
-function _copyObjectFrom(parent: any, key: string | number, data: any, object: any, creater: any, config: any[] | null): any {
+function _copyObjectFrom(parent: any, key: string | number, data: any, object: any, creater: any, config: any[] | null, scale: number = 1.0): any {
     const dataType = typeof data;
     const objectType = typeof object;
     if (objectType as any === "function") { //
@@ -24,6 +24,10 @@ function _copyObjectFrom(parent: any, key: string | number, data: any, object: a
     }
 
     if (object === null || object === undefined || objectType !== "object") {
+        if (creater instanceof Function) {
+            object = creater(key, object, scale)
+        }
+
         if (dataType === objectType) {
             parent[key] = object;
         }
@@ -75,38 +79,41 @@ function _copyObjectFrom(parent: any, key: string | number, data: any, object: a
         if (data instanceof Array) {
             data.length = object.length;
             for (let i = 0, l = data.length; i < l; ++i) {
-                _copyObjectFrom(data, i, data[i], object[i], creater, config);
+                _copyObjectFrom(data, i, data[i], object[i], creater, config, scale);
             }
         }
     }
     else {
+        // object instanceof Object
         if (data !== null && data !== undefined && dataType === "object") {
+            // exist object
             if (creater instanceof Array) {
                 for (let k in object) {
-                    _copyObjectFrom(data, k, data[k], object[k], creater[0], config);
+                    _copyObjectFrom(data, k, data[k], object[k], creater[0], config, scale);
                 }
             }
             else {
-                copyObjectFrom(object, data, config);
+                copyObjectFrom(object, data, config, scale);
             }
         }
         else if (creater) {
+            // object is null
             if (creater instanceof Array) {
                 if (creater[1] === Function) {
                     const clazz = creater[0](object);
                     parent[key] = data = new clazz();
-                    copyObjectFrom(object, data, config);
+                    copyObjectFrom(object, data, config, scale);
                 }
                 else {
                     parent[key] = data = creater[1] === Array ? [] : {};
                     for (let k in object) {
-                        _copyObjectFrom(data, k, data[k], object[k], creater[0], config);
+                        _copyObjectFrom(data, k, data[k], object[k], creater[0], config, scale);
                     }
                 }
             }
             else if (creater) {
                 parent[key] = data = new creater();
-                copyObjectFrom(object, data, config);
+                copyObjectFrom(object, data, config, scale);
             }
             else {
                 // console.warn(`${key}: shallow copy.`);

@@ -7,7 +7,8 @@ var dbftV23 = require("../format/dragonBonesFormatV23");
 /**
  * Convert json string to DragonBones format.
  */
-function default_1(jsonString, getTextureAtlases) {
+function default_1(jsonString, getTextureAtlases, scale) {
+    if (scale === void 0) { scale = 1.0; }
     if (!dbft.isDragonBonesString(jsonString)) {
         return null;
     }
@@ -21,7 +22,7 @@ function default_1(jsonString, getTextureAtlases) {
             return V23ToV45(data);
         }
         var result = new dbft.DragonBones();
-        object.copyObjectFrom(json, result, dbft.copyConfig);
+        object.copyObjectFrom(json, result, dbft.copyConfig, scale);
         return result;
     }
     catch (error) {
@@ -305,3 +306,4 @@ function getTimelineFrameMatrix(timeline, framePosition, transform) {
         transform.scY = currentFrame.transform.scY + transform.scY * tweenProgress;
     }
 }
+//# sourceMappingURL=toFormat.js.map

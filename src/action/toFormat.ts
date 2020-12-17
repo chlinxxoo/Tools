@@ -5,7 +5,7 @@ import * as dbftV23 from "../format/dragonBonesFormatV23";
 /**
  * Convert json string to DragonBones format.
  */
-export default function (jsonString: string, getTextureAtlases: () => dbft.TextureAtlas[]): dbft.DragonBones | null {
+export default function (jsonString: string, getTextureAtlases: () => dbft.TextureAtlas[], scale: number = 1.0): dbft.DragonBones | null {
     if (!dbft.isDragonBonesString(jsonString)) {
         return null;
     }
@@ -23,7 +23,7 @@ export default function (jsonString: string, getTextureAtlases: () => dbft.Textu
         }
 
         const result = new dbft.DragonBones();
-        object.copyObjectFrom(json, result, dbft.copyConfig);
+        object.copyObjectFrom(json, result, dbft.copyConfig, scale);
 
         return result;
     }

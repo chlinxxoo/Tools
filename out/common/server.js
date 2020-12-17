@@ -59,15 +59,15 @@ var Code;
     Code[Code["JSONError"] = 2002] = "JSONError";
     Code[Code["ActionError"] = 2003] = "ActionError";
 })(Code = exports.Code || (exports.Code = {}));
-var Gate = /** @class */ (function (_super_1) {
-    __extends(Gate, _super_1);
+var Gate = /** @class */ (function (_super) {
+    __extends(Gate, _super);
     function Gate() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.actions = {};
         return _this;
     }
     Gate.prototype._requestHandler = function (request, response) {
-        if (!_super_1.prototype._requestHandler.call(this, request, response)) {
+        if (!_super.prototype._requestHandler.call(this, request, response)) {
             return false;
         }
         var pathName = url.parse(request.url).pathname.replace(this.local, "");
@@ -101,3 +101,4 @@ var Gate = /** @class */ (function (_super_1) {
     return Gate;
 }(Server));
 exports.Gate = Gate;
+//# sourceMappingURL=server.js.map

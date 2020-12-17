@@ -85,3 +85,4 @@ var ResourceJSON = /** @class */ (function () {
     return ResourceJSON;
 }());
 exports.ResourceJSON = ResourceJSON;
+//# sourceMappingURL=resFormat.js.map

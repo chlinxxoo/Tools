@@ -23,6 +23,7 @@ function execute(): void {
         .option("-f, --filter [keyword]", "Filter")
         .option("-d, --delete", "Delete raw files after convert complete")
         .option("-p, --parameter [parameter]", "Parameter")
+        .option("-s, --scale [scale]", "Output scale")
         .parse(process.argv);
 
     const input = path.resolve(path.normalize(commands["input"] as string || process.cwd()));
@@ -31,6 +32,7 @@ function execute(): void {
     const filter = commands["filter"] as string || "";
     const deleteRaw = commands["delete"] as boolean || false;
     const parameter = commands["parameter"] as string || "";
+    const scale = Number(commands["scale"]) || 1.0;
     let loadTextureAtlasToData = false;
     let megreTextureAtlasToData = false;
 
@@ -79,7 +81,7 @@ function execute(): void {
             });
 
             return textureAtlases;
-        });
+        }, scale);
 
         if (!dragonBonesData) {
             continue;

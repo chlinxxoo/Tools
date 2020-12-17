@@ -895,3 +895,4 @@ function stringToUTF8Array(string) {
     }
     return result;
 }
+//# sourceMappingURL=toBinary.js.map

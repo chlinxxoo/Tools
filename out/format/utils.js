@@ -60,3 +60,4 @@ function getTextureAtlases(filePath, rawName, suffix, fileType) {
     return textureAtlases;
 }
 exports.getTextureAtlases = getTextureAtlases;
+//# sourceMappingURL=utils.js.map

@@ -727,3 +727,4 @@ function readTuple(tuple, line) {
     tuple[i] = line.substring(lastMatch).trim();
     return i + 1;
 }
+//# sourceMappingURL=fromSpine.js.map

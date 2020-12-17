@@ -314,13 +314,13 @@ var BaseDisplay = /** @class */ (function () {
     return BaseDisplay;
 }());
 exports.BaseDisplay = BaseDisplay;
-var Bone = /** @class */ (function (_super_1) {
-    __extends(Bone, _super_1);
+var Bone = /** @class */ (function (_super) {
+    __extends(Bone, _super);
     function Bone() {
-        return _super_1 !== null && _super_1.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Bone.prototype.read = function (reader) {
-        _super_1.prototype.read.call(this, reader);
+        _super.prototype.read.call(this, reader);
         this.animation = reader.readObject();
         this.transformFrames = reader.readObject();
         this._readOpacity(reader);
@@ -328,13 +328,13 @@ var Bone = /** @class */ (function (_super_1) {
     return Bone;
 }(BaseBone));
 exports.Bone = Bone;
-var Surface = /** @class */ (function (_super_1) {
-    __extends(Surface, _super_1);
+var Surface = /** @class */ (function (_super) {
+    __extends(Surface, _super);
     function Surface() {
-        return _super_1 !== null && _super_1.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Surface.prototype.read = function (reader) {
-        _super_1.prototype.read.call(this, reader);
+        _super.prototype.read.call(this, reader);
         this.segmentY = reader.readInt();
         this.segmentX = reader.readInt();
         this.animation = reader.readObject();
@@ -344,10 +344,10 @@ var Surface = /** @class */ (function (_super_1) {
     return Surface;
 }(BaseBone));
 exports.Surface = Surface;
-var Display = /** @class */ (function (_super_1) {
-    __extends(Display, _super_1);
+var Display = /** @class */ (function (_super) {
+    __extends(Display, _super);
     function Display() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.clipedNames = null;
         return _this;
     }
@@ -372,10 +372,10 @@ var Display = /** @class */ (function (_super_1) {
     return Display;
 }(BaseDisplay));
 exports.Display = Display;
-var Mesh = /** @class */ (function (_super_1) {
-    __extends(Mesh, _super_1);
+var Mesh = /** @class */ (function (_super) {
+    __extends(Mesh, _super);
     function Mesh() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.culling = false;
         _this.colorCompositionType = 0;
         _this.colorGroupIndex = -1;
@@ -386,7 +386,7 @@ var Mesh = /** @class */ (function (_super_1) {
     }
     // public readonly uvInfo = new UVInfo();// TODO
     Mesh.prototype.read = function (reader) {
-        _super_1.prototype.read.call(this, reader);
+        _super.prototype.read.call(this, reader);
         this.textureIndex = reader.readInt();
         this.vertexCount = reader.readInt();
         this.triangleCount = reader.readInt();
@@ -875,3 +875,4 @@ var BinaryReader = /** @class */ (function () {
     return BinaryReader;
 }());
 exports.BinaryReader = BinaryReader;
+//# sourceMappingURL=live2DFormat.js.map

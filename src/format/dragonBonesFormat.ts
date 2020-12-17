@@ -1927,10 +1927,28 @@ export const copyConfig = [
         animation: Animation,
         defaultActions: OldAction,
         canvas: Canvas,
-        userData: UserData
+        userData: UserData,
+        aabb: [
+            function (key: string | number, object: any, scale: number) {
+                return object * scale
+            },
+            Function
+        ]
     },
     Bone, {
-        userData: UserData
+        userData: UserData,
+        transform: [
+            function (key: string | number, object: any, scale: number) {
+                return (["x", "y"]).indexOf(key.toString()) == -1 ? object : object * scale
+            },
+            Function
+        ],
+        length: [
+            function (key: string | number, object: any, scale: number) {
+                return object * scale
+            },
+            Function
+        ]
     },
     Slot, {
         actions: OldAction,

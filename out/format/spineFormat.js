@@ -139,11 +139,11 @@ var Attachment = /** @class */ (function () {
     return Attachment;
 }());
 exports.Attachment = Attachment;
-var RegionAttachment = /** @class */ (function (_super_1) {
-    __extends(RegionAttachment, _super_1);
+var RegionAttachment = /** @class */ (function (_super) {
+    __extends(RegionAttachment, _super);
     function RegionAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.width = 0;
         _this.height = 0;
         _this.x = 0.00;
@@ -160,11 +160,11 @@ var RegionAttachment = /** @class */ (function (_super_1) {
     return RegionAttachment;
 }(Attachment));
 exports.RegionAttachment = RegionAttachment;
-var MeshAttachment = /** @class */ (function (_super_1) {
-    __extends(MeshAttachment, _super_1);
+var MeshAttachment = /** @class */ (function (_super) {
+    __extends(MeshAttachment, _super);
     function MeshAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.width = 0; // Nonessential.
         _this.height = 0; // Nonessential.
         _this.hull = 0;
@@ -181,11 +181,11 @@ var MeshAttachment = /** @class */ (function (_super_1) {
     return MeshAttachment;
 }(Attachment));
 exports.MeshAttachment = MeshAttachment;
-var LinkedMeshAttachment = /** @class */ (function (_super_1) {
-    __extends(LinkedMeshAttachment, _super_1);
+var LinkedMeshAttachment = /** @class */ (function (_super) {
+    __extends(LinkedMeshAttachment, _super);
     function LinkedMeshAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.deform = true;
         _this.width = 0; // Nonessential.
         _this.height = 0; // Nonessential.
@@ -200,11 +200,11 @@ var LinkedMeshAttachment = /** @class */ (function (_super_1) {
     return LinkedMeshAttachment;
 }(Attachment));
 exports.LinkedMeshAttachment = LinkedMeshAttachment;
-var BoundingBoxAttachment = /** @class */ (function (_super_1) {
-    __extends(BoundingBoxAttachment, _super_1);
+var BoundingBoxAttachment = /** @class */ (function (_super) {
+    __extends(BoundingBoxAttachment, _super);
     function BoundingBoxAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.vertexCount = 0;
         _this.color = "60F000FF";
         _this.vertices = [];
@@ -216,11 +216,11 @@ var BoundingBoxAttachment = /** @class */ (function (_super_1) {
     return BoundingBoxAttachment;
 }(Attachment));
 exports.BoundingBoxAttachment = BoundingBoxAttachment;
-var PathAttachment = /** @class */ (function (_super_1) {
-    __extends(PathAttachment, _super_1);
+var PathAttachment = /** @class */ (function (_super) {
+    __extends(PathAttachment, _super);
     function PathAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.color = "FF7F00FF";
         _this.closed = false;
         _this.constantSpeed = true;
@@ -235,11 +235,11 @@ var PathAttachment = /** @class */ (function (_super_1) {
     return PathAttachment;
 }(Attachment));
 exports.PathAttachment = PathAttachment;
-var PointAttachment = /** @class */ (function (_super_1) {
-    __extends(PointAttachment, _super_1);
+var PointAttachment = /** @class */ (function (_super) {
+    __extends(PointAttachment, _super);
     function PointAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.x = 0.0;
         _this.y = 0.0;
         _this.color = "F1F100FF";
@@ -252,11 +252,11 @@ var PointAttachment = /** @class */ (function (_super_1) {
     return PointAttachment;
 }(Attachment));
 exports.PointAttachment = PointAttachment;
-var ClippingAttachment = /** @class */ (function (_super_1) {
-    __extends(ClippingAttachment, _super_1);
+var ClippingAttachment = /** @class */ (function (_super) {
+    __extends(ClippingAttachment, _super);
     function ClippingAttachment(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.vertexCount = 0.0;
         _this.end = "";
         _this.color = "CE3A3AFF";
@@ -322,20 +322,20 @@ var Frame = /** @class */ (function () {
     return Frame;
 }());
 exports.Frame = Frame;
-var TweenFrame = /** @class */ (function (_super_1) {
-    __extends(TweenFrame, _super_1);
+var TweenFrame = /** @class */ (function (_super) {
+    __extends(TweenFrame, _super);
     function TweenFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.curve = "linear";
         return _this;
     }
     return TweenFrame;
 }(Frame));
 exports.TweenFrame = TweenFrame;
-var TranslateFrame = /** @class */ (function (_super_1) {
-    __extends(TranslateFrame, _super_1);
+var TranslateFrame = /** @class */ (function (_super) {
+    __extends(TranslateFrame, _super);
     function TranslateFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.x = 0.0;
         _this.y = 0.0;
         return _this;
@@ -343,11 +343,11 @@ var TranslateFrame = /** @class */ (function (_super_1) {
     return TranslateFrame;
 }(TweenFrame));
 exports.TranslateFrame = TranslateFrame;
-var RotateFrame = /** @class */ (function (_super_1) {
-    __extends(RotateFrame, _super_1);
+var RotateFrame = /** @class */ (function (_super) {
+    __extends(RotateFrame, _super);
     function RotateFrame(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this, isDefault) || this;
+        var _this = _super.call(this, isDefault) || this;
         _this.angle = 0.0;
         if (isDefault) {
             _this.angle = NaN; // Spine import data bug.
@@ -357,10 +357,10 @@ var RotateFrame = /** @class */ (function (_super_1) {
     return RotateFrame;
 }(TweenFrame));
 exports.RotateFrame = RotateFrame;
-var ShearFrame = /** @class */ (function (_super_1) {
-    __extends(ShearFrame, _super_1);
+var ShearFrame = /** @class */ (function (_super) {
+    __extends(ShearFrame, _super);
     function ShearFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.x = 0.0;
         _this.y = 0.0;
         return _this;
@@ -368,11 +368,11 @@ var ShearFrame = /** @class */ (function (_super_1) {
     return ShearFrame;
 }(TweenFrame));
 exports.ShearFrame = ShearFrame;
-var ScaleFrame = /** @class */ (function (_super_1) {
-    __extends(ScaleFrame, _super_1);
+var ScaleFrame = /** @class */ (function (_super) {
+    __extends(ScaleFrame, _super);
     function ScaleFrame(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this, isDefault) || this;
+        var _this = _super.call(this, isDefault) || this;
         _this.x = 1.0;
         _this.y = 1.0;
         if (isDefault) {
@@ -384,11 +384,11 @@ var ScaleFrame = /** @class */ (function (_super_1) {
     return ScaleFrame;
 }(TweenFrame));
 exports.ScaleFrame = ScaleFrame;
-var AttachmentFrame = /** @class */ (function (_super_1) {
-    __extends(AttachmentFrame, _super_1);
+var AttachmentFrame = /** @class */ (function (_super) {
+    __extends(AttachmentFrame, _super);
     function AttachmentFrame(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this, isDefault) || this;
+        var _this = _super.call(this, isDefault) || this;
         _this.name = "";
         if (isDefault) {
             _this.name = null; // Spine import data bug.
@@ -398,11 +398,11 @@ var AttachmentFrame = /** @class */ (function (_super_1) {
     return AttachmentFrame;
 }(Frame));
 exports.AttachmentFrame = AttachmentFrame;
-var ColorFrame = /** @class */ (function (_super_1) {
-    __extends(ColorFrame, _super_1);
+var ColorFrame = /** @class */ (function (_super) {
+    __extends(ColorFrame, _super);
     function ColorFrame(isDefault) {
         if (isDefault === void 0) { isDefault = false; }
-        var _this = _super_1.call(this, isDefault) || this;
+        var _this = _super.call(this, isDefault) || this;
         _this.color = "FFFFFFFF";
         if (isDefault) {
             _this.color = null; // Spine import data bug.
@@ -412,10 +412,10 @@ var ColorFrame = /** @class */ (function (_super_1) {
     return ColorFrame;
 }(TweenFrame));
 exports.ColorFrame = ColorFrame;
-var IKConstraintFrame = /** @class */ (function (_super_1) {
-    __extends(IKConstraintFrame, _super_1);
+var IKConstraintFrame = /** @class */ (function (_super) {
+    __extends(IKConstraintFrame, _super);
     function IKConstraintFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.bendPositive = true;
         _this.mix = 1.0;
         return _this;
@@ -423,10 +423,10 @@ var IKConstraintFrame = /** @class */ (function (_super_1) {
     return IKConstraintFrame;
 }(TweenFrame));
 exports.IKConstraintFrame = IKConstraintFrame;
-var TransformConstraintFrame = /** @class */ (function (_super_1) {
-    __extends(TransformConstraintFrame, _super_1);
+var TransformConstraintFrame = /** @class */ (function (_super) {
+    __extends(TransformConstraintFrame, _super);
     function TransformConstraintFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.rotateMix = 1.0;
         _this.translateMix = 1.0;
         _this.scaleMix = 1.0;
@@ -436,10 +436,10 @@ var TransformConstraintFrame = /** @class */ (function (_super_1) {
     return TransformConstraintFrame;
 }(TweenFrame));
 exports.TransformConstraintFrame = TransformConstraintFrame;
-var DeformFrame = /** @class */ (function (_super_1) {
-    __extends(DeformFrame, _super_1);
+var DeformFrame = /** @class */ (function (_super) {
+    __extends(DeformFrame, _super);
     function DeformFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.offset = 0;
         _this.vertices = [];
         return _this;
@@ -447,10 +447,10 @@ var DeformFrame = /** @class */ (function (_super_1) {
     return DeformFrame;
 }(TweenFrame));
 exports.DeformFrame = DeformFrame;
-var EventFrame = /** @class */ (function (_super_1) {
-    __extends(EventFrame, _super_1);
+var EventFrame = /** @class */ (function (_super) {
+    __extends(EventFrame, _super);
     function EventFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.int = 0;
         _this.float = 0.0;
         _this.string = "";
@@ -460,10 +460,10 @@ var EventFrame = /** @class */ (function (_super_1) {
     return EventFrame;
 }(Frame));
 exports.EventFrame = EventFrame;
-var DrawOrderFrame = /** @class */ (function (_super_1) {
-    __extends(DrawOrderFrame, _super_1);
+var DrawOrderFrame = /** @class */ (function (_super) {
+    __extends(DrawOrderFrame, _super);
     function DrawOrderFrame() {
-        var _this = _super_1 !== null && _super_1.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.offsets = [];
         return _this;
     }
@@ -570,3 +570,4 @@ exports.compressConfig = [
     new EventFrame(true),
     new DrawOrderFrame(true),
 ];
+//# sourceMappingURL=spineFormat.js.map

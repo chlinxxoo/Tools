@@ -24,6 +24,7 @@ function execute() {
         .option("-f, --filter [keyword]", "Filter")
         .option("-d, --delete", "Delete raw files after convert complete")
         .option("-p, --parameter [parameter]", "Parameter")
+        .option("-s, --scale [scale]", "Output scale")
         .parse(process.argv);
     var input = path.resolve(path.normalize(commands["input"] || process.cwd()));
     var output = "output" in commands ? path.resolve(path.normalize(commands["output"])) : input;
@@ -31,6 +32,7 @@ function execute() {
     var filter = commands["filter"] || "";
     var deleteRaw = commands["delete"] || false;
     var parameter = commands["parameter"] || "";
+    var scale = Number(commands["scale"]) || 1.0;
     var loadTextureAtlasToData = false;
     var megreTextureAtlasToData = false;
     switch (type) {
@@ -70,7 +72,7 @@ function execute() {
                 return getTextureAtlas(v);
             });
             return textureAtlases;
-        });
+        }, scale);
         if (!dragonBonesData) {
             return "continue";
         }
@@ -305,3 +307,4 @@ function getTextureAtlas(textureAtlasFile) {
     return textureAtlas;
 }
 execute();
+//# sourceMappingURL=convertTo.js.map

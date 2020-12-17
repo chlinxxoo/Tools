@@ -21,3 +21,4 @@ exports.MineContentTypes = {
     "wmv": "video/x-ms-wmv",
     "xml": "text/xml"
 };
+//# sourceMappingURL=types.js.map
