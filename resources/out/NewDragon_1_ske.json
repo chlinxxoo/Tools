@@ -7138,7 +7138,6 @@
           "ffd": [
             {
               "name": "bozishang",
-              "slot": "bozishang",
               "frame": [
                 {
                   "duration": 15,
@@ -7354,11 +7353,11 @@
                     -2.19
                   ]
                 }
-              ]
+              ],
+              "slot": "bozishang"
             },
             {
               "name": "bozixia",
-              "slot": "bozixia",
               "frame": [
                 {
                   "duration": 15,
@@ -7471,11 +7470,11 @@
                     -0.21
                   ]
                 }
-              ]
+              ],
+              "slot": "bozixia"
             },
             {
               "name": "tou",
-              "slot": "tou",
               "frame": [
                 {
                   "duration": 20
@@ -7522,7 +7521,8 @@
                     -0.2
                   ]
                 }
-              ]
+              ],
+              "slot": "tou"
             }
           ]
         }
