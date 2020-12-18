@@ -182,7 +182,7 @@ function execute(): void {
 
                 const outputDirURL = dirURL.replace(input, output);
                 const outputURL = path.join(outputDirURL, fileName + ".json");
-                const result = JSON.stringify(dragonBonesData);
+                const result = JSON.stringify(dragonBonesData, null, '  ');
 
                 if (!fs.existsSync(outputDirURL)) {
                     fs.mkdirsSync(outputDirURL);

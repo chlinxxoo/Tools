@@ -1943,12 +1943,9 @@ export const copyConfig = [
             },
             Function
         ],
-        length: [
-            function (key: string | number, object: any, scale: number) {
-                return object * scale
-            },
-            Function
-        ]
+        length: function (key: string | number, object: any, scale: number) {
+            return object * scale
+        }
     },
     Slot, {
         actions: OldAction,
