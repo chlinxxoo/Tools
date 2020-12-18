@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "tsc"
+		},
+		{
+			"type": "shell",
+			"group": "test",
+			"command": "./out/convertTo.js -t new -i /Users/chl/Documents/chl-workPlaces/DragonBonesTools/resources/nanzhu1_z -o /Users/chl/Documents/chl-workPlaces/DragonBonesTools/resources",
+			"problemMatcher": [],
+			"label": "test cmd",
+			"detail": "test"
+		}
+	]
+}
